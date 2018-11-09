@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8">
+      <title>Hello World!</title>
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="css/index.css">
+      <link rel="stylesheet" type="text/css" href="css/main.css">
+      <!-- Insert this line above script imports  -->
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+<!-- normal script imports etc  -->
+<script src="js/jquery.js"></script>  
+<script src="js/af.js"></script>
+<script src="js/utils.js"></script>  
+<script src="js/Chart.min.js"></script>    
+
+<!-- Insert this line after script imports -->
+<script>if (window.module) module = window.module;</script>
+    </head>
+    <body>
+      <header>
+        <nav class="topnav flex-row space-around" id="myTopnav">
+             <a href="index.html">Control Panel</a>
+             <a class="activeNav" href="Visualisation.html">Visualisation</a>
+          </ul>
+        </nav>
+      </header>
+      <div class="container" style="margin-top: 2%;max-width: 2000px;" id="app" xmlns="http://www.w3.org/1999/html">
+          <button id="testBtn">test</button>
+         <div class="chart-container" style="position: relative; height:40vh; width:80vw"> 
+          <canvas id="chart1"></canvas>
+        </div>
+      </div>
+      <script type="text/javascript">
+         // require("./js/jquery.js");
+         // require("./js/Chart.min.js");
+         // require("./js/main.js");
+         $('#testBtn').click(function(){
+           console.log("The paragraph was clicked.");
+         });
+// function randomNumber(min, max) {
+//       return Math.random() * (max - min) + min;
+//     }
+
+//     function randomBar(date, lastClose) {
+//       var open = randomNumber(lastClose * 0.95, lastClose * 1.05);
+//       var close = randomNumber(open * 0.95, open * 1.05);
+//       return {
+//         t: date.valueOf(),
+//         y: close
+//       };
+//     }
+
+//     var dateFormat = 'MMMM DD YYYY';
+//     var date = moment('April 01 2017', dateFormat);
+//     var data = [randomBar(date, 30)];
+//     var labels = [date];
+//     console.log("labels");console.log(labels);
+//     while (data.length < 60) {
+//       date = date.clone().add(1, 'd');
+//       if (date.isoWeekday() <= 5) {
+//         data.push(randomBar(date, data[data.length - 1].y));
+//         labels.push(date);
+//       }
+//     }
+    var data = [];
+    var counter = 0;
+    while(data.length < 20) {
+      data.push({t: counter*0.5, y: counter*0.1 });
+      counter = counter + 1 ;
+    }
+    // console.log("labels");console.log(labels);
+    console.log("data");console.log(data);
+    var ctx = document.getElementById('chart1').getContext('2d');
+    ctx.canvas.width = 1000;
+    ctx.canvas.height = 300;
+
+    var color = Chart.helpers.color;
+    var cfg = {
+      type: 'line',
+      data: {
+        // labels: labels,
+        datasets: [{
+          label: 'CHRT - Chart.js Corporation',
+          backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
+          borderColor: window.chartColors.red,
+          data: data,
+          type: 'line',
+          pointRadius: 0,
+          fill: false,
+          lineTension: 0,
+          borderWidth: 2
+        }]
+      },
+      options: {
+        scales: {
+          xAxes: [{
+            type: 'time',
+            distribution: 'series',
+            ticks: {
+              source: 'labels'
+            }
+          }],
+          yAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: 'Closing price ($)'
+            }
+          }]
+        }
+      }
+    };
+    var chart = new Chart(ctx, cfg);
+    var myVar = setInterval(myTimer, 10);
+
+   function myTimer() {
+    data.push({t: counter*0.5, y: counter*0.1 });
+      counter = counter + 1 ;console.log("data");console.log(data);
+      // if(counter%10 === 0) {
+        chart.update();
+      // }
+      
+    // document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+    }
+
+    // document.getElementById('update').addEventListener('click', function() {
+    //   var type = document.getElementById('type').value;
+    //   chart.config.data.datasets[0].type = type;
+    //   chart.update();
+    // });
+      </script>
+    </body>
+  </html>

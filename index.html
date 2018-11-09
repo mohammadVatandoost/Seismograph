@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8">
+      <title>Hello World!</title>
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="css/index.css">
+      <link rel="stylesheet" type="text/css" href="css/main.css">
+    </head>
+    <body>
+      <header>
+        <nav class="topnav flex-row space-around" id="myTopnav">
+             <a class="activeNav" href="index.html">Control Panel</a>
+             <a href="Visualisation.html">Visualisation</a>
+          </ul>
+        </nav>
+      </header>
+      <div class="container" style="margin-top: 2%;max-width: 2000px;" id="app" xmlns="http://www.w3.org/1999/html">
+<!-- Tab links -->
+<div class="tab" style="direction: ltr;">
+  <button class="tablinks" id="defaultOpen" onclick="openCity(event, 'menu')">Channels Configuration/Monitoring</button>
+  <button class="tablinks" onclick="openCity(event, 'menuCategory')">EEW Configuration</button>
+  <button class="tablinks" onclick="openCity(event, 'menuFood')">SHM Configuration</button>
+</div>
+<!--   <div class="flex-row space-around">
+    <a href="menuCategory.html" class="btn btn-primary">اضافه کردن دسته</a>
+    <a href="" class="btn btn-primary">اضافه کردن غذا</a>
+  </div>
+  <hr/> -->
+  <!-- Menu -->
+ <div id="menu" class="tabcontent">
+
+   <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Channel Number</th>
+        <th>Unit Number</th>
+        <th>Description</th>
+        <th>Battery Level</th>
+        <th>Sample Rate</th>
+        <th>Bandpass Filter</th>
+        <th>Story</th>
+        <th>Saving on Local</th>
+        <th>Saving on Web</th>
+        <th>Sending to Web</th>
+        <th>Sensor Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td><td>1021</td><td style="color: green;">Roof-x</td><td>90%</td><td style="color: green;">200</td><td style="color: green;">0-50</td>
+        <td style="color: green;">4x</td>
+        <td>
+          <label class="container-checkBox">
+            <input name="payMethod" type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+        </td>
+        <td>
+          <label class="container-checkBox">
+            <input name="payMethod" type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+        </td>
+        <td>
+          <label class="container-checkBox">
+            <input name="payMethod" type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+        </td>
+        <td style="color: green;">A</td>
+      </tr>
+      <tr>
+        <td>2</td><td>1021</td><td style="color: green;">Roof-x</td><td>90%</td><td style="color: green;">200</td><td style="color: green;">0-50</td>
+        <td style="color: green;">4x</td>
+        <td>
+          <label class="container-checkBox">
+            <input name="payMethod" type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+        </td>
+        <td>
+          <label class="container-checkBox">
+            <input name="payMethod" type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+        </td>
+        <td>
+          <label class="container-checkBox">
+            <input name="payMethod" type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+        </td>
+        <td style="color: green;">A</td>
+      </tr>
+      <tr>
+        <td>3</td><td>1021</td><td style="color: green;">Roof-x</td><td>90%</td><td style="color: green;">200</td><td style="color: green;">0-50</td>
+        <td style="color: green;">4x</td>
+        <td>
+          <label class="container-checkBox">
+            <input name="payMethod" type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+        </td>
+        <td>
+          <label class="container-checkBox">
+            <input name="payMethod" type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+        </td>
+        <td>
+          <label class="container-checkBox">
+            <input name="payMethod" type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+        </td>
+        <td style="color: green;">A</td>
+      </tr>
+      <tr>
+        <td>4</td><td>819</td><td style="color: green;">Roof-x</td><td>90%</td><td style="color: green;">200</td><td style="color: green;">0-50</td>
+        <td style="color: green;">4x</td>
+        <td>
+          <label class="container-checkBox">
+            <input name="payMethod" type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+        </td>
+        <td>
+          <label class="container-checkBox">
+            <input name="payMethod" type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+        </td>
+        <td>
+          <label class="container-checkBox">
+            <input name="payMethod" type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+        </td>
+        <td style="color: green;">A</td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+   <button class="btn btn-success" style="margin: auto;display: block;">Apply</button>
+  <br/>
+ </div>
+
+
+ <!-- Menu category -->
+ <div id="menuCategory" class="tabcontent"> 
+    <div class="flex-row space-around">
+      <div class="flex-column">
+        <br/><br/>
+        <div class="flex-row flex-start flex-center-align" style="margin-bottom: 1%;">
+          <label class="col-md-4">Alert Level (Mw)</label><input class="form-control col-md-3" type="text" name=""><small class="col-md-2">Double</small>
+        </div>
+        <div class="flex-row flex-start flex-center-align" style="margin-bottom: 1%;">
+          <label class="col-md-4">Win Length (Sec.)</label><input class="form-control col-md-3" type="text" name=""><small class="col-md-2">Double</small>
+        </div>
+        <div class="flex-row flex-start flex-center-align" style="margin-bottom: 1%;">
+          <label class="col-md-4">Acc. trigger Level (g)</label><input class="form-control col-md-3" type="text" name=""><small class="col-md-2">Double</small>
+        </div>
+        <br/>
+        <div class="flex-row flex-start flex-center-align" style="margin-bottom: 1%;">
+          <label class="col-md-4">Roof-x Channel No.</label><input class="form-control col-md-3" type="text" name=""><small class="col-md-2">Integer</small>
+        </div>
+        <div class="flex-row flex-start flex-center-align" style="margin-bottom: 1%;">
+          <label class="col-md-4">Roof-y Channel No.</label><input class="form-control col-md-3" type="text" name=""><small class="col-md-2">Integer</small>
+        </div>
+        <div class="flex-row flex-start flex-center-align" style="margin-bottom: 1%;">
+          <label class="col-md-4">Roof-z Channel No.</label><input class="form-control col-md-3" type="text" name=""><small class="col-md-2">Integer</small>
+        </div>
+      </div>
+      <div class="flex-column">
+        <h3>Primary</h3>
+        <div class="flex-row flex-start flex-center-align" style="margin-bottom: 1%;">
+          <label class="col-md-4">Base-x Channel No.</label><input class="form-control col-md-3" type="text" name=""><small class="col-md-2">Integer</small>
+        </div>
+        <div class="flex-row flex-start flex-center-align" style="margin-bottom: 1%;">
+          <label class="col-md-4">Base-y Channel No.</label><input class="form-control col-md-3" type="text" name=""><small class="col-md-2">Integer</small>
+        </div>
+        <div class="flex-row flex-start flex-center-align" style="margin-bottom: 1%;">
+          <label class="col-md-4">Base-z Channel No.</label><input class="form-control col-md-3" type="text" name=""><small class="col-md-2">Integer</small>
+        </div>
+        <br/>
+        <h3>Secondry</h3>
+        <div class="flex-row flex-start flex-center-align" style="margin-bottom: 1%;">
+          <label class="col-md-4">Base-x Channel No.</label><input class="form-control col-md-3" type="text" name=""><small class="col-md-2">Integer</small>
+        </div>
+        <div class="flex-row flex-start flex-center-align" style="margin-bottom: 1%;">
+          <label class="col-md-4">Base-y Channel No.</label><input class="form-control col-md-3" type="text" name=""><small class="col-md-2">Integer</small>
+        </div>
+        <div class="flex-row flex-start flex-center-align" style="margin-bottom: 1%;">
+          <label class="col-md-4">Base-z Channel No.</label><input class="form-control col-md-3" type="text" name=""><small class="col-md-2">Integer</small>
+        </div>
+      </div>
+    </div>
+    <br/>
+   <button class="btn btn-success" style="margin: auto;display: block;">Apply</button>
+  <br/>
+ </div>
+ <!-- Menu category -->
+ <div id="menuFood" class="tabcontent">
+    <div class="flex-row space-around">
+      <div class="flex-column">
+        <br/><br/>
+        <div class="flex-row flex-start flex-center-align" style="margin-bottom: 1%;">
+          <label class="col-md-4">No. of Stories</label><input class="form-control col-md-3" type="text" name=""><small class="col-md-2">Integer</small>
+        </div>
+        <div class="flex-row flex-start flex-center-align" style="margin-bottom: 1%;">
+          <label class="col-md-4">Allowable Drift</label><input class="form-control col-md-3" type="text" name=""><small class="col-md-2">Double</small>
+        </div>
+        <div class="flex-row flex-start flex-center-align" style="margin-bottom: 1%;">
+          <label class="col-md-4">Soil Type</label><input class="form-control col-md-3" type="text" name=""><small class="col-md-2">Integer</small>
+        </div>
+        <div class="flex-row flex-start flex-center-align" style="margin-bottom: 1%;">
+          <label class="col-md-4">Structural System</label><input class="form-control col-md-3" type="text" name=""><small class="col-md-2">Integer</small>
+        </div>
+        <div class="flex-row flex-start flex-center-align" style="margin-bottom: 1%;">
+          <label class="col-md-4">Year of Construction</label><input class="form-control col-md-3" type="text" name=""><small class="col-md-2">Integer</small>
+        </div>
+      </div>
+      <div class="flex-column">
+      </div>
+    </div>
+    <br/>
+   <button class="btn btn-success" style="margin: auto;display: block;">Apply</button>
+  <br/>
+ </div>
+
+
+</div>
+      <h1>Terminal</h1>
+      <span>Ports: </span><span id="ports"></span>
+      <br/>
+      <button id="openButton" class="btn btn-primary">Open</button>
+      <button id="closeButton" class="btn btn-danger">close</button>
+      <br/>
+      <div class="container">
+        <div class="form-group">
+          <label for="textForSending">send:</label>
+          <input type="text" class="form-control" id="textForSending">
+        </div>
+        <button class="btn btn-success" id="sendText">send</button>
+        <br/>
+        <hr/>
+        <br/>
+        <h3>Recieve :</h3>
+        <p id="recieveText"></p>
+      </div>
+      <script type="text/javascript">
+        function openCity(evt, cityName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+         require("./js/jquery.js");
+         require("./js/main.js");
+      </script>
+    </body>
+  </html>
